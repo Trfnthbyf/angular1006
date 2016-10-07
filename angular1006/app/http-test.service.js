@@ -16,7 +16,7 @@ var HTTPTestService = (function () {
         this._http = _http;
     }
     HTTPTestService.prototype.getCurrentTime = function () {
-        return this._http.get('http://data.jsontest.com')
+        return this._http.get('localhost:1337/data')
             .map(function (res) { return res.json(); });
     };
     HTTPTestService.prototype.postJSON = function () {
