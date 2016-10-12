@@ -13,6 +13,7 @@ import { ProjectComponent } from './project.component';
 import { routes } from './routes/app.routes';
 import { UserService } from './services/user.service';
 import { LoggedInGuard } from './logged-in.guard';
+import { RegistrComponent } from './registr.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LoggedInGuard } from './logged-in.guard';
         HomeComponent,
         LoginComponent,
         SignInComponent,
-        ProjectComponent
+        ProjectComponent,
+        RegistrComponent
     ],
     bootstrap:    [ AppComponent ],
     providers: [

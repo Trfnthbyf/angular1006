@@ -24,10 +24,10 @@ var UserService = (function () {
             .post('http://localhost:1337/data', JSON.stringify({ "email": email }), { headers: headers })
             .map(function (res) { return res.json(); })
             .map(function (res) {
-            if (res.email) {
+            if (res.success) {
                 return res.email;
             }
-            return res.message({ "message": "sory!" });
+            console.log(res.error);
         });
     };
     UserService.prototype.login = function (email, password) {

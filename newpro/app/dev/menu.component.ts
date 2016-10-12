@@ -7,9 +7,8 @@ import { UserService } from './services/user.service';
     template: `<nav class="menu">
                    <ul class="menu-list">
                        <li><a routerLink="/home">Home</a></li>
-                       <li><a routerLink="/login">Registration</a></li>
                        <li><a routerLink="/project">Project</a></li>
-                       <li><a routerLink="/signin">Signin</a></li>
+                       <li><a routerLink="/registr">registr</a></li>
                        <li><a routerLink="/home" (click)="onClick()">log out</a></li>
                    </ul>                   
                </nav>`

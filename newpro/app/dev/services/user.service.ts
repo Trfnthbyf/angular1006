@@ -18,14 +18,14 @@ export class UserService {
             .post('http://localhost:1337/data', JSON.stringify({ "email": email}), { headers })
             .map(res => res.json())
             .map((res) => {
-                if (res.email) {
-                    
+
+                if (res.success) {
                     return res.email;
                     /*localStorage.setItem('auth_token', res.auth_token);
                     this.loggedIn = true;*/
                 }
 
-                return res.message({"message": "sory!"});
+                console.log(res.error);
             });
     }
 

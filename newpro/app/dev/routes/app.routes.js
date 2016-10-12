@@ -1,6 +1,5 @@
 "use strict";
 var home_component_1 = require('../home.component');
-var login_component_1 = require('../login.component');
 var project_component_1 = require('../project.component');
 var logged_in_guard_1 = require('../logged-in.guard');
 var sign_in_component_1 = require('../sign-in.component');
@@ -11,11 +10,7 @@ exports.routes = [
         pathMatch: 'full'
     },
     {
-        path: 'login',
-        component: login_component_1.LoginComponent
-    },
-    {
-        path: 'signin',
+        path: 'registr',
         component: sign_in_component_1.SignInComponent
     },
     {

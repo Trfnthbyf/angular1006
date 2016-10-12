@@ -22,6 +22,7 @@ var project_component_1 = require('./project.component');
 var app_routes_1 = require('./routes/app.routes');
 var user_service_1 = require('./services/user.service');
 var logged_in_guard_1 = require('./logged-in.guard');
+var registr_component_1 = require('./registr.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -39,7 +40,8 @@ var AppModule = (function () {
                 home_component_1.HomeComponent,
                 login_component_1.LoginComponent,
                 sign_in_component_1.SignInComponent,
-                project_component_1.ProjectComponent
+                project_component_1.ProjectComponent,
+                registr_component_1.RegistrComponent
             ],
             bootstrap: [app_component_1.AppComponent],
             providers: [

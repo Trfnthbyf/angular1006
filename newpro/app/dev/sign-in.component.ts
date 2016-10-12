@@ -8,6 +8,7 @@ import { User } from './user';
     selector: 'signin',
     template: `  <div class="form-container">
       <h3 class="form-title">Sign In</h3>
+
         <form *ngIf="active" novalidate #signupForm="ngForm" (ngSubmit)="signupForm.valid && sendEmail(email.value)">
           <div>                        
               <input type="text" name="email" placeholder="Enter your email"
@@ -19,13 +20,12 @@ import { User } from './user';
             </div>                        
             <button type="submit" class="form-button">Sign In</button>
           </form>
-        </div>
-               `
+          <login [justEmail]="justEmail"></login>`
 })
 export class SignInComponent {
     user = new User('');
     active = true;
-    justEmail;
+    public justEmail: string = '';
     
     constructor(private userService: UserService, private router: Router) {}
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from './services/user.service';
@@ -8,16 +8,10 @@ import { User } from './user';
     selector: 'login',
     template: `<div class="form-container">
                    <h3 class="form-title">Login Page</h3>
+                   {{justEmail}}
                    <form *ngIf="active" novalidate #signupForm="ngForm" (ngSubmit)="signupForm.valid && onSubmit(email.value, password.value)" method="POST">
                         <div>                        
-                            <input type="text" name="email" placeholder="Enter your email"
-                                #email="ngModel"
-                                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
-                                [ngModel]="user.email"
-                                required/>   
-                                <div [hidden]="email.valid || (email.pristine && !signupForm.submitted)">
-                                Email is required
-                                </div>                         
+                            <input type="text" name="email" placeholder="Enter your email" value={{justEmail}} disabled/>
                         </div>
                         <div>
                             <input type="password" name="password" placeholder="Enter your password"
@@ -35,6 +29,7 @@ import { User } from './user';
                `
 })
 export class LoginComponent {
+    @Input()justEmail: string;
     user = new User('', '');
     active = true;
     

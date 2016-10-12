@@ -18,6 +18,7 @@ var SignInComponent = (function () {
         this.router = router;
         this.user = new user_1.User('');
         this.active = true;
+        this.justEmail = '';
     }
     SignInComponent.prototype.sendEmail = function (email, password) {
         var _this = this;
@@ -34,7 +35,7 @@ var SignInComponent = (function () {
     SignInComponent = __decorate([
         core_1.Component({
             selector: 'signin',
-            template: "  <div class=\"form-container\">\n      <h3 class=\"form-title\">Sign In</h3>\n        <form *ngIf=\"active\" novalidate #signupForm=\"ngForm\" (ngSubmit)=\"signupForm.valid && sendEmail(email.value)\">\n          <div>                        \n              <input type=\"text\" name=\"email\" placeholder=\"Enter your email\"\n                                #email=\"ngModel\"\n                                pattern=\"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$\"\n                                [ngModel]=\"user.email\"\n                                required/>   \n              <div [hidden]=\"email.valid || (email.pristine && !signupForm.submitted)\">Email is required</div>                         \n            </div>                        \n            <button type=\"submit\" class=\"form-button\">Sign In</button>\n          </form>\n        </div>\n               "
+            template: "  <div class=\"form-container\">\n      <h3 class=\"form-title\">Sign In</h3>\n\n        <form *ngIf=\"active\" novalidate #signupForm=\"ngForm\" (ngSubmit)=\"signupForm.valid && sendEmail(email.value)\">\n          <div>                        \n              <input type=\"text\" name=\"email\" placeholder=\"Enter your email\"\n                                #email=\"ngModel\"\n                                pattern=\"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$\"\n                                [ngModel]=\"user.email\"\n                                required/>   \n              <div [hidden]=\"email.valid || (email.pristine && !signupForm.submitted)\">Email is required</div>                         \n            </div>                        \n            <button type=\"submit\" class=\"form-button\">Sign In</button>\n          </form>\n          <login [justEmail]=\"justEmail\"></login>"
         }), 
         __metadata('design:paramtypes', [user_service_1.UserService, router_1.Router])
     ], SignInComponent);

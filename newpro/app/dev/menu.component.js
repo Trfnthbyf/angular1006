@@ -20,7 +20,7 @@ var MenuComponent = (function () {
     MenuComponent = __decorate([
         core_1.Component({
             selector: 'menu',
-            template: "<nav class=\"menu\">\n                   <ul class=\"menu-list\">\n                       <li><a routerLink=\"/home\">Home</a></li>\n                       <li><a routerLink=\"/login\">Registration</a></li>\n                       <li><a routerLink=\"/project\">Project</a></li>\n                       <li><a routerLink=\"/signin\">Signin</a></li>\n                       <li><a routerLink=\"/home\" (click)=\"onClick()\">log out</a></li>\n                   </ul>                   \n               </nav>"
+            template: "<nav class=\"menu\">\n                   <ul class=\"menu-list\">\n                       <li><a routerLink=\"/home\">Home</a></li>\n                       <li><a routerLink=\"/project\">Project</a></li>\n                       <li><a routerLink=\"/registr\">registr</a></li>\n                       <li><a routerLink=\"/home\" (click)=\"onClick()\">log out</a></li>\n                   </ul>                   \n               </nav>"
         }), 
         __metadata('design:paramtypes', [user_service_1.UserService])
     ], MenuComponent);
